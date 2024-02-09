@@ -592,6 +592,7 @@ nameInput.classList.add("required-field");
   // Append the message and the name input to the form popup container
   formPopupContainer.appendChild(callMessage);
   formPopupContainer.appendChild(nameInput);
+  
 
 const numberInput = document.createElement("input");
 numberInput.setAttribute("type", "text");
@@ -680,9 +681,18 @@ cartItemsList.style.display = "none";
       Subject: "My Cart",
       Body: emailContent,
       isHtml: true // Set to true to send HTML content
-    }).then(
-      message => alert(message)
-    );
+    })
+    .then(() => {
+      // Email sent successfully
+      alert("Order sent");
+        // Refresh the page
+  window.location.reload();
+    })
+    .catch(error => {
+      // Error occurred while sending the email
+      console.error("Error sending email:", error);
+      alert("Order failed to send. Please try again later.");
+    });
   
     // Close the form popup
     closeFormPopup();
