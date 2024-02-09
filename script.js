@@ -543,19 +543,32 @@ function updateQuantity(tag, amount) {
 
 onLoadCartNumbers();
 displayCart();
-
 function prepareCartEmail(name, number, address, deliveryInstructions, cartItems) {
-  let emailContent = `Name:\t${name}\nNumber:\t${number}\nAddress:\t${address}\nDelivery Instructions:\t${deliveryInstructions}\nCart Items:\n`;
+  let emailContent = `
+    <h2>Order Details</h2>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Phone Number:</strong> ${number}</p>
+    <p><strong>Address:</strong> ${address}</p>
+    <p><strong>Delivery Instructions:</strong> ${deliveryInstructions}</p>
+    <h3>Cart Items</h3>
+    <ul>
+  `;
+
   let totalPrice = 0; // Initialize total price variable
-  
+
   Object.values(cartItems).forEach(item => {
     const itemTotalPrice = item.price * item.inCart;
     totalPrice += itemTotalPrice; // Add item total price to the total price variable
-    emailContent += `${item.name}\t- ${item.inCart} item(s)\t- $${itemTotalPrice.toFixed(2)}\n`;
+    emailContent += `
+      <li>
+        <strong>${item.name}</strong> - ${item.inCart} item(s) - $${itemTotalPrice.toFixed(2)}
+      </li>
+    `;
   });
   
-  emailContent += `Total Price:\t$${totalPrice.toFixed(2)}\n`; // Add total price to the email content
-  
+  emailContent += `</ul>`;
+  emailContent += `<p><strong>Total Price:</strong> $${totalPrice.toFixed(2)}</p>`; // Add total price to the email content
+
   return emailContent;
 }
 
@@ -661,11 +674,12 @@ cartItemsList.style.display = "none";
   
     // Use SMTPJS to send the email
     Email.send({
-      SecureToken : "your_secure_token",
-      To : 'recipient@example.com',
-      From : "sender@example.com",
-      Subject : "My Cart",
-      Body : emailContent
+      SecureToken: "6932c092-95e8-4952-b76b-91c7b67b9454",
+      To: 'Ph4n7omtest@gmail.com',
+      From: "Ph4n7omtest@gmail.com",
+      Subject: "My Cart",
+      Body: emailContent,
+      isHtml: true // Set to true to send HTML content
     }).then(
       message => alert(message)
     );
