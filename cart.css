@@ -1,0 +1,168 @@
+*{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+ body{
+  background-color: #737576;
+ }
+ 
+ 
+
+ .cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+}
+
+.total {
+  width: 60px;
+}
+
+.products-container{
+  margin-top: 70px;
+}
+.product {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  margin-left: 15px;
+  display: block;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.quantity span {
+  margin: 0 10px;
+}
+
+.total {
+  margin-bottom: 10px;
+}
+
+.basketTotalContainer {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.basketTotalContainer button{
+  background-color: #000;
+  color: #737576;
+  font-size: 20px;
+  padding: 5px;
+  border: none;
+}
+
+.basketTotalTitle {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.basketTotal {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.cart-btn ion-icon {
+  color: #000;
+  vertical-align: bottom;
+  padding-right: 10px;
+  margin-left: 20px;
+  font-size: 30px;
+}
+.quantity ion-icon {
+  font-size: 20px;
+  margin: 0 5px;
+}
+.product ion-icon {
+  font-size: 18px;
+}
+
+a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 3px;
+  color: transparent;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+a:hover {
+opacity: .5;
+  transition: 1s;
+}
+
+  /* Style for form popup */
+  .form-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    width:300px;
+  height: 300px;
+  }
+
+  /* Style for form inputs */
+  .form-popup input[type="text"],
+  .form-popup textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  /* Style for form submit button */
+  .form-popup button {
+    background-color: #000;
+    color:#737576;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  /* Style for form close button */
+  .form-popup-close {
+    position: absolute;
+    top: 1px;
+    right: 5px;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+  }
+
+  

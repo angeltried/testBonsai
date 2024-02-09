@@ -1,0 +1,768 @@
+@keyframes fadeinall {
+  0% {
+    opacity: 1; }
+  97% {
+    opacity: 0; }
+  98% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    z-index: -1; } }
+  #fadein {
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    background-color: #737576;
+    z-index: 999;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation: fadeinall 1s normal both;
+    animation: fadeinall 1s normal both;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.5s; }
+
+    *{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #737576;
+    }
+     section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      /* border: solid 1px red; */
+      width: 100%;
+      height: 90vh;
+     }
+
+     /* top logo */
+     .demo{
+      
+      display: flex;
+      flex-direction: column;
+     }
+
+
+     .demo a {
+      
+      margin-top: 30px;
+      bottom: 20px;
+      left: 50%;
+      display: inline-block;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      color: #000;
+      letter-spacing: .1em;
+      text-decoration: none;
+      transition: opacity .3s;
+    }
+    .demo a:hover {
+      opacity: .5;
+    }
+
+    #section05 a {
+      padding-top: 70px;
+      font-family:'Times New Roman', Times, serif;
+      font-weight: 800;
+    }
+    #section05 a span {
+      position: absolute;
+      margin-top: 20px;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      margin-left: -7px;
+      border-left: 2.5px solid #fff;
+      border-bottom: 2.5px solid #fff;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-animation: sdb05 1.5s infinite;
+      animation: sdb05 1.5s infinite;
+      box-sizing: border-box;
+    }
+    @-webkit-keyframes sdb05 {
+      0% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+      }
+    }
+    @keyframes sdb05 {
+      0% {
+        transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+      }
+    }
+
+
+img{
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+/* Popup */
+
+.popup .overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vh;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 2;
+  display: none;
+}
+
+.popup .content{
+  position: fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  background: #ffff;
+  width:300px;
+  height: 400px;
+  z-index: 2000;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border: solid 3px #000;
+}
+
+.popup .close-btn {
+  position: absolute;
+  right: 10px;
+  top:0px;
+  width: 30px;
+  height: 30px;
+  font-size: 25px;
+  font-weight:600;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+ 
+}
+
+.popup .close-btn:hover{
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.pop.active .overlay {
+display: block;
+}
+
+.popup.active .content{
+  transition:all 300ms ease-in-out;
+  transform: translate(-50%,-50%) scale(1);
+}
+
+button{
+  font-size: 30px;
+  color: #000;
+  background-color: transparent;
+  border: none;
+  position: fixed;
+  left: 3%;
+  top: 5%;
+  z-index: 1030;
+  cursor: pointer;
+}
+button:hover{
+  opacity: 0.5;
+  transition: 0.2s;
+}
+.content-link{
+  display: flex;
+  flex-direction: column;
+}
+.content-link a{
+  text-decoration: none;
+  color: #000;
+  margin: 20px;
+}
+
+/* cart btn */
+.cart-btn{
+  font-size: 24px;
+  color: #000;
+  position: fixed;
+  right: 3%;
+  top: 4%;
+  z-index: 1030;
+  cursor: pointer;
+  display: inline-block;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  border-radius: 90px;
+  font-weight: 600;
+}
+
+.cart-image{
+position: absolute;
+top: -50%;
+margin-left: 37px;
+z-index: 1;
+}
+.cart-number {
+  position: absolute;
+  z-index: 2;
+  left: 90%;
+  color: black;
+   /* You can change this color to make the number visible on the image */
+}
+.cart-btn span {
+  padding-left: 5px;
+}
+
+.cart-btn a{
+  text-decoration:none;
+  font-weight: 600;
+  z-index: 3;
+  color: #000;;
+  padding: 3px;
+  position: relative;
+  border-radius: 5px;
+  position: relative;
+  margin-right: 35px;
+  display: inline-block;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+/* Photo Menu */
+
+.menu-img{
+  height: max-content;
+  position: relative;
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+
+.menu-img img{
+  width: 350px;
+  height: 100%;
+  object-fit: cover;
+}
+
+ .phone{
+  position: absolute;
+  margin-left: 140px;
+  top: 10%;
+  text-align: right;
+ 
+}
+.phone p{
+  font-size: 10px;
+}
+
+.phone a{
+font-size: 20px;
+color: #000;
+text-decoration: none;
+
+}
+
+     
+   
+
+/* bud menu */
+
+label {
+  cursor: pointer;
+  /* border: solid 1px red;  */
+  margin-top:100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+/* Hide the checkbox while still keeping its property */
+input {
+  display: none;
+}
+    
+    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .flip-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    background-color: transparent;
+    /* border: 1px solid #f1f1f1; */
+    height: 350px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    
+    }
+    
+    /* This container is needed to position the front and back side */
+    .flip-card-inner {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    
+    }
+    
+    /* Do an horizontal flip when you click over the flip box container */
+    :checked + .flip-card-inner {
+    transform: rotateY(180deg);
+    transition: 1s;
+    }
+    
+    /* Position the front and back side */
+    .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    }
+    .flip-card-inner, .flip-card-front img{
+      position: relative;
+      width: 250px;
+      height: 250px;
+      border-radius: 7px;
+      backface-visibility: hidden;
+    }
+  
+    .flip-card-front{
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+.flip-card-front h4{
+  position: absolute;
+  bottom: 100%;
+  font-size: 13px;
+  backface-visibility: hidden;
+}
+
+.flip-card-front h2,h3{
+  z-index: 1;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.flip-card-front h2{
+
+    bottom: 110% ;
+    backface-visibility: hidden;
+    font-size: 20px;
+  
+}
+
+    .flip-card-front p{
+      position: relative;
+     margin-right: 160px;
+     margin-top: 3px;
+     padding: 3px;
+      /* background-color: #737576; */
+      background-color: #000;
+      color: #fff;
+      /* border: solid 1px #000; */
+      border-radius: 7px;
+      font-size: 17px;
+      z-index: 1;
+      backface-visibility: hidden;
+    }
+    
+/* Style the back side */
+.flip-card-back {
+  display: flex;
+  height: 270px;
+  flex-direction: column;
+  background-color: transparent;
+  color: #000;
+  transform: rotateY(180deg);
+  font-size: 1em;
+}
+.flip-card-back h1{
+  border-radius: 7px;
+  padding: 7px;
+   overflow: scroll;
+   font-size: 16px;
+   line-height: 16px;
+   background-color: #000;
+   color: #fff;
+}
+
+/* Swiper js */
+.swiper {
+  width: 100%;
+  height: 100%;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.swiper-slide img {
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.swiper-slide {
+  font-size: 18px;
+  /* border: solid 1px red;  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide a{
+  color: #000;
+ font-weight: 900;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
+}
+
+.swiper-button-next, .swiper-button-prev{
+  color: #000 !important;
+    fill: black !important;
+    stroke: black !important;
+}
+.mySwiper [class^="swiper-button-"]{
+  top: initial;
+  bottom: 30%;
+  padding: 20px;
+}
+.mySwiper [class^="swiper-button-"]::after{
+  font-size: 20px;
+ 
+}
+
+.swiper-slide .add-cart{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-slide .add-cart:hover{
+  color: white;
+}
+    h3{
+      top: 100%;
+      width: 100px;
+      margin: 18px;
+      border-radius: 5px; 
+      color: #000;
+      --b: 2px;
+      --c: #000;
+      --w: 10px;
+      border: var(--b) solid #0000;
+      --_g: #0000 90deg,var(--c) 0;
+      --_p: var(--w) var(--w) border-box no-repeat;
+      background:
+        conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
+        conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
+        conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
+        conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
+  
+    }
+    .swiper-slide h6{
+      font-size: 35px;
+      color: #fff;
+      margin-top: 0 ;
+      
+      font-family: 'Times New Roman', Times, serif;
+      text-shadow: #000 1px 0 10px; 
+      border-bottom: solid 1px #fff;
+    }
+    .menu-links h6{
+      font-size: 20px;
+      margin-top: 0;
+      color: #fff;
+      font-family: 'Times New Roman', Times, serif;
+      text-shadow: #000 1px 0 10px;  
+      }
+     
+      h5{
+        background-color: #737576;
+        margin: 0;
+        font-size: 30px;
+
+      }
+
+   
+
+    .hidden {
+      display: none;
+    }
+    /* bottom swiper links */
+
+    .menu-links{
+      width: 100%;
+      height: 300px;
+      
+      display: flex;
+      text-align: center;
+
+      justify-content: flex-start;
+      /* margin-top: -450px; */
+      
+    }
+     .menu-btn{
+      /* margin-top: 20px; */
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: row;
+     }
+    .menu-btn a{
+      box-shadow: 1px 2px #000,  0 .1em #000;
+      font-size: 18px;
+      border: solid 1px #000;
+      border-radius: 7px;
+      background-color: #fff;
+      text-decoration: none;
+      color: #000;
+      padding: 5px 5px;
+      margin: 4px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    }
+    
+   
+   
+    
+
+/* Footer */
+.footer {
+  position: relative;
+  width: 100%;
+  background: #000;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  padding: 0;
+}  
+.social-icon__item {
+  list-style: none;
+}    
+.social-icon__link {
+  font-size: 3rem;
+  color: #737576;
+  margin: 10px 30px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+.footer a{
+  color: #737576;
+}  
+.footer p {
+  color: #737576;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+} 
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("img/wave.png");
+  background-size: 1000px 100px;
+}  
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}  
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+
+
+/* Cart */
+
+.products-container{
+  
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 6cqb;
+}
+
+.product-header {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 4px solid #fff;
+}
+
+.product-title {
+  width: 45%;
+}
+
+.price{
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+  width: 30%;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  align-items: center;
+}
+
+.total{
+  width: 10%;
+  border-bottom: 1px solid #fff;
+  border: flex;
+  align-items: center;
+}
+
+.product{
+  width: 45%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #fff;
+}
+    
+/* mission */
+
+.mission {
+  width:100%;
+  height: 300px;
+  display: flex;
+  /* border: solid 1px red; */
+  position: relative;
+  margin-top: 180px;
+  margin-left: 50px;
+}
+
+.statement h1 {
+  background: none;
+  margin-bottom: 30px;
+  font-size: 60px;
+  width: 325px;
+ color: #fff;
+}
+
+.statement{
+  background: none;
+display: flex;
+flex-direction: column;
+margin-bottom: 500px;
+}
+
+.statement h6{
+  font-size: 20px;
+  margin-top: 0;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: #000 1px 0 10px;  
+}
+
+.info{
+  width: 300px;
+}
+
+.info p {
+  border-top: solid 3px #000;
+  font-size: 12px;
+  margin-bottom: 40px;
+  padding-top: 7px;
+}
+
+
+
+    
+    
+    
+    
