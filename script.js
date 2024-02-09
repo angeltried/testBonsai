@@ -685,8 +685,11 @@ cartItemsList.style.display = "none";
     .then(() => {
       // Email sent successfully
       alert("Order sent");
-        // Refresh the page
-  window.location.reload();
+        // Clear sessionStorage
+  sessionStorage.clear();
+   // Redirect to index.html
+    window.location.href = "index.html";
+    
     })
     .catch(error => {
       // Error occurred while sending the email
