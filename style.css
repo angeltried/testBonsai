@@ -62,7 +62,7 @@
       align-items: center;
       z-index: 4000;
       opacity: 0; /* Initially hidden */
-      transition: opacity 0.7s ease-in; /* Transition on opacity */
+      transition: opacity 1s ease-in; /* Transition on opacity */
     }
     /* Show the popup when opacity changes */
 .agepopupContainer.show {
@@ -72,18 +72,18 @@
     .agepopup {
       background-color: white;
       border-radius: 5px;
-      width: 375px;
-      height: 250px;
+      width: 350px;
+      height: 200px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       font-size: 12px;
       display: flex;
       flex-direction: column;
-      padding: 20px;
+      padding: 15px;
     }
     .flabel{
       display: flex;
       position: relative;
-      bottom: 25%;
+      bottom: 30%;
 
     }
   
@@ -95,7 +95,7 @@
 
     .agepopup h2 {
       position: relative;
-      margin-top: 40px;
+      margin-top: 5px;
     }
 
     .agepopup select,
@@ -103,7 +103,7 @@
       position: relative;
       margin-top: 75px;
       width: 25%;
-      height: 45px;
+      height: 40px;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -114,7 +114,6 @@
       width: 100px;
       padding: 2px;
       font-size: 20px;
-    
       background-color: #000;
       color: #737576;
       border: none;
