@@ -17,24 +17,16 @@
 
   <div class="agepopupContainer" id="popupContainer">
     <div class="agepopup">
-      <h2>Enter Your Birthday</h2>
-      <form id="birthdayForm">
-        <div class="flabel">
-        <label for="birthdayMonth">Month:</label>
-        <select id="birthdayMonth" name="birthdayMonth"></select>
-        
-        <label for="birthdayDay">Day:</label>
-        <select id="birthdayDay" name="birthdayDay"></select>
-        
-        <label for="birthdayYear">Year:</label>
-        <select id="birthdayYear" name="birthdayYear"></select>
-        </div>
-
-        
-        <button type="submit">Submit</button>
-      </form>
-      <p id="errorMessage" style="color: red; display: none;">You must be 21 or older to view this page.</p>
-
+      <div class="agetop">
+        <h1>Welcome to</h1>
+        <img src="./img/logotrasparent.jpg" alt="">
+      </div>
+      <h2>Confirm You Are 18<sup>+</sup></h2>
+      <div class="age-btn">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+      </div>
+      <p id="errorMessage" style="color: red; display: none;">You must be 18 or older to view this page.</p>
     </div>
   </div>
  
@@ -216,7 +208,26 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Function to show the age verification popup
+      function showAgeVerificationPopup() {
+        document.getElementById("popupContainer").style.display = "flex";
+      }
+    
+      // Call the function to show the popup when the page loads
+      showAgeVerificationPopup();
+    
+      // Add event listeners to the buttons
+      document.getElementById("yesBtn").addEventListener("click", function() {
+        document.getElementById("popupContainer").style.display = "none";
+      });
+    
+      document.getElementById("noBtn").addEventListener("click", function() {
+        document.getElementById("errorMessage").style.display = "block";
+      });
+    });
+    </script>
    <!-- Initialize Swiper -->
    <script>
     var swiper = new Swiper(".mySwiper", {
@@ -233,86 +244,7 @@
       },
     });
   </script>
- <script>
-   document.addEventListener("DOMContentLoaded", function() {
-    var popupContainer = document.getElementById("popupContainer");
-    popupContainer.classList.add("show");
-  }); 
-    function calculateAge(birthDate) {
-    var today = new Date();
-    var birthDate = new Date(birthDate);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
-    return age;
-  }
-
-  document.getElementById("birthdayForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    var birthYear = document.getElementById("birthdayYear").value;
-    var birthMonth = document.getElementById("birthdayMonth").value;
-    var birthDay = document.getElementById("birthdayDay").value;
-    var birthDate = new Date(birthYear, birthMonth - 1, birthDay); // Month is zero-based
-
-    var age = calculateAge(birthDate);
-
-    if (age < 21) {
-      document.getElementById("errorMessage").style.display = "block";
-    } else {
-      // Hide the popup
-      document.querySelector(".agepopupContainer").style.display = "none";
-
-    }
-  });
-  
- // Function to populate the month dropdown
- function populateMonths() {
-    var select = document.getElementById("birthdayMonth");
-    var months = [
-      "January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
-    ];
-    for (var i = 0; i < months.length; i++) {
-      var option = document.createElement("option");
-      option.text = months[i];
-      option.value = i + 1;
-      select.appendChild(option);
-    }
-  }
-
-  // Function to populate the day dropdown
-  function populateDays() {
-    var select = document.getElementById("birthdayDay");
-    for (var i = 1; i <= 31; i++) {
-      var option = document.createElement("option");
-      option.text = i;
-      option.value = i;
-      select.appendChild(option);
-    }
-  }
-
-  // Function to populate the year dropdown
-  function populateYears() {
-    var select = document.getElementById("birthdayYear");
-    var currentYear = new Date().getFullYear();
-    for (var i = currentYear; i >= 1900; i--) {
-      var option = document.createElement("option");
-      option.text = i;
-      option.value = i;
-      select.appendChild(option);
-    }
-  }
-
-  // Call the functions to populate dropdowns when the page loads
-  window.onload = function() {
-    populateMonths();
-    populateDays();
-    populateYears();
-  };
-  </script>
+ 
  </body>
 
 </html> 

@@ -56,76 +56,50 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.8);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 4000;
-      opacity: 0; /* Initially hidden */
-      transition: opacity 1s ease-in; /* Transition on opacity */
     }
-    /* Show the popup when opacity changes */
-.agepopupContainer.show {
-  opacity: 1;
-}
-  
     .agepopup {
       background-color: white;
       border-radius: 5px;
       width: 350px;
       height: 200px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       font-size: 12px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       padding: 15px;
     }
-    .flabel{
+    .agetop{
       display: flex;
-      position: relative;
-      bottom: 30%;
-
+    
+      gap: 20px;
     }
-  
-    /* Styling for form elements */
-    .agepopup form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .agepopup h2 {
-      position: relative;
-      margin-top: 5px;
-    }
-
-    .agepopup select,
-    .agepopup input[type="number"] {
-      position: relative;
-      margin-top: 75px;
-      width: 25%;
-      height: 40px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box; /* Ensure padding is included in the width */
-    }
-  
-    .agepopup button[type="submit"] {
+    .agetop img{
       width: 100px;
-      padding: 2px;
-      font-size: 20px;
-      background-color: #000;
-      color: #737576;
+    }
+    .agepopup .age-btn button {
+      font-size: 15px;
+      padding: 10px 20px; /* Adjust padding as needed */
+      margin: 5px; /* Adjust margin as needed */
       border: none;
       border-radius: 5px;
-      position: relative;
+      background-color: #000; /* Adjust background color as needed */
+      color: #fff; /* Adjust text color as needed */
       cursor: pointer;
-     
     }
 
-    .agepopup button[type="submit"]:hover {
-      opacity: .5;
-    }
+  .agepopup p{
+    padding: 0;
+    margin: 0;
+  }
+
+
 
      section{
       display: flex;
@@ -272,7 +246,7 @@ display: block;
   transform: translate(-50%,-50%) scale(1);
 }
 
-button{
+button .bi{
   font-size: 30px;
   color: #000;
   background-color: transparent;
@@ -283,7 +257,7 @@ button{
   z-index: 1030;
   cursor: pointer;
 }
-button:hover{
+button .bi:hover{
   opacity: 0.5;
   transition: 0.2s;
 }
