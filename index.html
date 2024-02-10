@@ -15,7 +15,7 @@
 <body>
 
 
-  <div class="agepopupContainer">
+  <div class="agepopupContainer" id="popupContainer">
     <div class="agepopup">
       <h2>Enter Your Birthday</h2>
       <form id="birthdayForm">
@@ -234,6 +234,10 @@
     });
   </script>
  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+    var popupContainer = document.getElementById("popupContainer");
+    popupContainer.classList.add("show");
+  }); 
     function calculateAge(birthDate) {
     var today = new Date();
     var birthDate = new Date(birthDate);
