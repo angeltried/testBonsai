@@ -10,54 +10,43 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.2/font/bootstrap-icons.min.css  ">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  
   <meta name="theme-color" content="#737576">
 </head>
 <body>
-  
-  <div id="fadein"></div>
 
-  <div class="popup" id="popup-1">
-    <div class="overlay"></div>
-    <div class="content">
-      <div class="close-btn" onClick="togglePopup()" >&times;</div>
-      <p>You Can Reach Us Here :</p>
-      <div class="content-link">
-        <a href="tel:+1 737 335 5227">737.335.5227</a>
-        <a href="mailto:bonsaibrothersadmin@proton.me?subject=Order&body=YourName:      Type(s):      Quantity:     Address: ">Email Us</a> 
-        <a target="_blank" href="https://t.me/bonsaibros"> Telegram</a>
-        <a target="_blank" href="https://www.instagram.com/bonsaibrothersofficial/?igshid=NGVhN2U2NjQ0Yg%3D%3D">Instagram</a>
-        <a href="mailto:BonsaiBrothersSupport@proton.com?subject=Support&body=Describe any issuse you are experiencing as we are currently debugging site daily. We will reach out to you as soon as possible :">Technical Issue?</a> 
-      </div> 
+
+  <div class="agepopupContainer">
+    <div class="agepopup">
+      <h2>Enter Your Birthday</h2>
+      <form id="birthdayForm">
+        <div class="flabel">
+        <label for="birthdayMonth">Month:</label>
+        <select id="birthdayMonth" name="birthdayMonth"></select>
+        
+        <label for="birthdayDay">Day:</label>
+        <select id="birthdayDay" name="birthdayDay"></select>
+        
+        <label for="birthdayYear">Year:</label>
+        <select id="birthdayYear" name="birthdayYear"></select>
+        </div>
+
+        
+        <button type="submit">Submit</button>
+      </form>
+      <p id="errorMessage" style="color: red; display: none;">You must be 21 or older to view this page.</p>
+
     </div>
   </div>
-  <button onClick="togglePopup()"><i class="bi bi-chat-left-dots"></i></button>
-
-  <div class="cart-btn">
-    <a href="cart.html"><!--<img class="cart-image" src="./img/cartlogo2.png" alt=""> --><i class="bi bi-cart"></i><span class="cart-number">0</span></a>
-  </div>
-
+ 
   <section id="section05" class="demo">
     <img src="./img/Screenshot 2023-12-18 at 7.31.17 PM.png"  alt="Bonsai Brothers Logo">
     <a href="#sections"><span></span>  MENU</a>
   </section>
-<!-- 
-  <section class="menu-img">
-    <div class="phone"> 
-      <a href="tel:+1 737 335 5227">737.335.5227</a>
-      <p>Serving Austin & surrounding locations<br>@bonsaibrothersofficial</p>
-    </div>
-   
-    <img src="./img/Menu (18).png" alt="menu list">
-  </section> -->
-
 
   <!-- Top Shelf -->
   <section   id="one">
-    
     <div class="swiper mySwiper">
       <div class="swiper-wrapper ">
-
         <div class="swiper-slide ">
           <label  >
             <h6>Top Shelf</h6>
@@ -80,362 +69,13 @@
           </label>
           <a class="add-cart cart1" href="#" onClick="return false">Add To Cart</a>
         </div>
-    
-       
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Tropicana Cherries</h2>
-                    <h4>THC 23% CBD 0%</h4>
-                    <p>$130 1&#8260;2oz</p>
-                    <img src="./img/Tropicanacherry.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">                
-                    <h1>Tropicana Cherry a slightly sativa dominant hybrid strain (60% sativa/40% indica) created through crossing the infamous Tropicana Cookies X Cherry Cookies strains. Love a super heavy flavor? Tropicana Cherry is the bud for you. This lovely lady packs flavors of sweet and sour citrus wrapped up with overly ripe cherries and earthy nuttiness, intensifying in fruitiness the more that you toke. The aroma is similar, although heavier and sourer in nature with a sharp citrus overtone that will leave your eyes wide open. </h1>
-                    <h5>&larr;</h5>
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart3" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Pure Michigan</h2>
-                    <h4>THC 28% CBD 0%</h4>
-                    <p>$120 1&#8260;2oz</p>
-                    <img src="./img/Puremichigan.JPG" style="width:100%;height:100%;object-fit: cover;">                  
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Pure Michigan is a rare indica dominant hybrid strain (70% indica/30% sativa) created through crossing the potent Oreoz X Mendo Breath F2 strains. Infamous for its super high level of potency, Pure Michigan is one delicious bud that will leave any indica lover feeling totally satisfied in both mind and body. This bud has a sweet and slightly spicy nutty chocolate flavor with a lightly creamy vanilla exhale. The aroma is very similar, with a sweet mocha coffee overtone accented by touches of earthy pungency and spicy nuttiness. The Pure Michigan high is just as delicious, with calming and soothing effects that will leave you feeling happy and lifted for hours on end. You'll feel happy and creative in this state, socially inspired and ready to carry on conversations with anyone and everyone around you with ease.</h1>
-                    <h5>&larr;</h5>                 
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart4" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-           
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Zour Milk</h2>
-                    <h4>THC 23% CBD 1%</h4>
-                    <p>$120 1&#8260;2oz</p>
-                    <img src="./img/Zourmilk.JPG" style="width:100%;height:100%;object-fit: cover;">                  
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Zour Milk is an indica dominant hybrid strain (70% indica/30% sativa) created through crossing the delicious Cereal Milk X Zkittlez strains. The perfect tasty bud for any indica lover, Zour Milk brings on a mouthwatering flavor and super sociable high that's ideal for any lazy afternoon spent with friends. Like its parent strains, Zour Milk has a sweet and creamy sugary vanilla flavor with a touch of fresh tropical citrus, too. The aroma is just as delicious, with a creamy vanilla overtone accented by a punch of sour tropical citrus that intensifies the more that you toke. </h1>
-                    <h5>&larr;</h5>                 
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart5" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Strawberry Cheesecake</h2>
-                    <h4>THC 22% CBD 1.3%</h4>
-                    <p>$120 1&#8260;2oz</p>
-                    <img src="./img/Strawberrycheesecake.JPG" style="width:100%;height:100%;object-fit: cover;">                  
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Strawberry Cheesecake is an indica dominant hybrid (70% indica/30% sativa) strain created through a three-way cross of the infamous White Widow X Chronic X Cheese strains. This powerful celebrity child has an average THC level of up to 22% and an average CBD level of about 2%, although it has been recorded higher. Strawberry Cheesecake is most famous for its taste and smell, of course – it has a distinct creamy strawberry cheesecake flavor that makes may make you think that you're actually smoking a cheesecake! The smell has a sickly sweet berry creaminess to it that only makes you want more! The Strawberry Cheesecake high has a smooth and fast onset that leaves you lightly euphoric and uplifted with a slight sense of cerebral energy and motivation.</h1>
-                    <h5>&larr;</h5>                 
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart6" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Cherry Payton</h2>
-                    <h4>THC 25% CBD 0.1%</h4>
-                    <p>$120 1&#8260;2oz</p>
-                    <img src="./img/Cherrypayton.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">                
-                    <h1>Cherry Payton, a balanced hybrid is a relaxing cross of Gary Payton and Cherry Cheesecake. Good for anxiety, stress, and general pain. Slightly sleepy feeling but not over powering. </h1>
-                    <h5>&larr;</h5>
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart7" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Purple Octane</h2>
-                    <h4>THC 30% CBD 1%</h4>
-                    <p>$120 1&#8260;2oz</p>
-                    <img src="./img/Purpleoctane.JPG" style="width:100%;height:100%;object-fit: cover;">                  
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Purple Octane is an indica dominant hybrid strain (70% indica/30% sativa) created as a phenotype of the classic Hi-Octane strain. Named for its gorgeous appearance, Purple Octane is the perfect choice for any lover of iconic indica strains. This bud has beautiful small, rounded forest green nugs with deep purple undertones, thin light orange hairs and a frosty thick coating of deep purple-tinted white crystal trichomes dripping with sweet sticky resin. As you pull apart each sparkling little nugget, aromas of spicy diesel and peppery grape wine are released, intensifying the more that you toke. The flavor falls on the sweeter side of the spectrum, with a spicy yet sweet grape wine taste accented by a touch of savory diesel upon exhale. </h1>
-                    <h5>&larr;</h5>                 
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart8" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-
-
-
-       
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Zlushie</h2>
-                    <h4>THC 20% CBD 1.1%</h4>
-                    <p>$120 1&#8260;2oz</p>
-                    <img src="./img/Zlushies.JPG" style="width:100%;height:100%;object-fit: cover;">                  
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Zlushie is a slightly indica dominant hybrid strain (60% indica/40% sativa) created through crossing the delicious Ice Cream Cake X Grape Zkittlez X Gelato 41 strains. If you're looking for a well-balanced bud with a super delicious flavor, you've found it with Zlushie. This bud brings on amazing tastes with each and every toke, blending sweet fruits, sour grapefruit and fresh vanilla. The aroma is just as delicious, with a bouquet of fresh berries and sour citrus accented by flowery woods, sharp cherry and spicy vanilla. The Zlushie high hits you a few minutes after your final toke, filling your mind with a stimulating euphoria that gently strokes the mood, lifting it into an almost arousing calm and happiness. This heady state quickly turns hazy, leaving you unfocused but pretty happy about it. At the same time, a heavy body stone will suddenly drop into your physical form, leaving you fully immovable and ready to kick back for hours on end.</h1>
-                    <h5>&larr;</h5>                 
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart9" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Strawberry Runtz</h2>
-                    <h4>THC 31% CBD 0%</h4>
-                    <p>$120 1&#8260;2oz</p>
-                    <img src="./img/Strawberryruntz.JPG" style="width:100%;height:100%;object-fit: cover;">                  
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Strawberry Runtz is a sativa dominant hybrid strain (70% sativa/30% indica) created through crossing the delicious Runtz X Strawberry Banana strains. Named for its delicious flavor and celebrity heritage, Strawberry Runtz is the perfect tasty sativa for anyone who's looking for a quick-hitting wake-and-bake option. Like its name suggests, Strawberry Runtz has a mouthwatering taste of sweet and creamy strawberry candy with a light touch of grassiness to it, too. The aroma is grassier than the flavor, accented by sweet berries and tart strawberries that intensify in fruitiness as the nugs are broken apart and burned away. The Strawberry Runtz high hits you almost as soon as you're done with your first amazing exhale, rushing into your mind with a sense of giddy energy and euphoria.</h1>
-                    <h5>&larr;</h5>                 
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart10" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Animal Mints</h2>
-                    <h4>THC 19% CBD 1%</h4>
-                    <p>$110 1&#8260;2oz</p>
-                    <img src="./img/Animalmints.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Animal Mints is an evenly balanced hybrid strain (50% indica/50% sativa) created through crossing the classic Thin Mint Girl Scout Cookies X Fire OG strains. Looking for an insanely delicious toke that will hit both mind and body with a high level of potency? Animal Mints is totally it. This baby packs a super sweet minty cookie flavor into each and every toke, with a lightly nutty vanilla exhale. The aroma is of earthy pine with a hint of sharp mint and pungent diesel, all wrapped up with a notable cookie effect as the nugs are burned. The Animal Mints high is just as delightful as the flavor, with long-lasting effects that are perfect for kicking back after a long and stressful day. </h1>
-                    <h5>&larr;</h5>                 
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart11" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Oreos</h2>
-                    <h4>THC 30% CBD 2%</h4>
-                    <p>$110 1&#8260;2oz</p>
-                    <img src="./img/oreos.JPG" style="width:100%;height:100%;object-fit: cover;">
-                    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Oreos when you cross the two strains, Cookies and Cream and Secret Weapon, the result is an intense and tasty hybrid known as Ore oz. Users report experiencing a cerebral rush leading to euphoria, accompanied by a heavy body relaxation that can induce couch-lock in higher doses. In moderation, they say it offers a blissful body stone without complete incapacitation, making it ideal for evening relaxation or creative endeavors. </h1>
-                    <h5>&larr;</h5>
-                  
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart12" href="#"onClick="return false">Add To Cart</a>
-
-
-
-
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Pop Rocks</h2>
-                    <h4>THC 20% CBD 0%</h4>
-                    <p>$110 1&#8260;2oz</p>
-                    <img src="./img/PopRocks.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Pop Rox is a super rare indica dominant hybrid strain with unknown parentage due to breeder secrecy, although it is thought to be a member of the Purple family thanks to its tasty flavor and rich purple coloration. This bud is so rare, in fact, that it is offered at only one dispensary in the city of Las Vegas. Not too much is known about this bud other than its highly addictive flavor that is said to be just like a fruity pack of your favorite childhood candy, Pop Rocks! The smell isn’t too bad either – fresh tangy fruits mixed with rich spiciness and sweet earth can be detected as you break apart each tiny super dense dusty green nug. </h1>
-                    <h5>&larr;</h5>                 
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart13" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-     
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Truffles</h2>
-                    <h4>THC 20% CBD 0.3%</h4>
-                    <p>$110 1&#8260;2oz</p>
-                    <img src="./img/Truffles.JPG" style="width:100%;height:100%;object-fit: cover;">                   
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Truffle, also called Trufflez or Truffles, is an indica-dominant hybrid strain made by crossing Zkittlez x Cherry Noir. The effects of Truffle are believed to be relaxing. Reviewers on Leafly say this weed strain makes them feel sleepy, relaxed, and happy. The dominant terpene is caryophyllene, and Truffle has a tangy, coffee nose with sugary and ammonia notes. Truffle has 20% THC. Medical marijuana patients say Truffle helps with stress, hypertension, and depression. </h1>
-                    <h5>&larr;</h5>             
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart14" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Cheetah Piss</h2>
-                    <h4>THC 22% CBD 0%</h4>
-                    <p>$110 1&#8260;2oz</p>
-                    <img src="./img/CheetahPiss.JPG" style="width:100%;height:100%;object-fit: cover;">
-                   
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Cheetah Piss is a rare evenly balanced hybrid strain (50% indica/50% sativa) created through crossing the iconic Lemonnade X Gelato 42 X London Poundcake 97 strains. Made as a homage to the infamous “Cat Piss” strain, Cheetah Piss packs a super potent high and pungent aroma that will leave your eyes watering. The high comes on fast and hard with a sense of expansive euphoria that launches you into a purely happy state. As your mind flies higher and higher a sense of clarity will wash over you, giving you the focus that you need to carry on any conversation or easily tackle anything on your to-do list. In combination with its super high 20% + average THC level, these effects give Cheetah Piss an edge in treating those patients suffering from conditions such as chronic fatigue, depression or mood swings, chronic stress and chronic pain. </h1>
-                    <h5>&larr;</h5>
-                  
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart15" href="#"onClick="return false">Add To Cart</a>
-
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Top Shelf</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>RZA</h2>
-                    <h4>THC 18% CBD 1.2%</h4>
-                    <p>$110 1&#8260;2oz</p>
-                    <img src="./img/RZA.JPG" style="width:100%;height:100%;object-fit: cover;">                   
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>RZA is an indica dominant strain. The nugs are incredibly dense and fuzzy with deep purple hues that run throughout the buds. Additionally, the nugs are covered by orange hairs and contrast well with its resin-coated buds. What really sets this strain apart from the others is that it is easy to identify by the taste alone. Its taste lingers on the tongue for longer and will help you feel relaxed. The strain has a serious kick to it and its psychoactive effects are evidently detectable in both body and mind. </h1>
-                    <h5>&larr;</h5>             
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart16" href="#"onClick="return false">Add To Cart</a>
-        </div>
-      </div>
-  
-   
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
     </div>  
-
-    
   </section>
   <!--  -->
 <!-- Flower -->
-  <section  class="section2" id="two" >
-    
+  <section  class="section2" id="two" > 
     <div class="swiper mySwiper">
       <div class="swiper-wrapper ">
 
@@ -461,444 +101,16 @@
           </label>
           <a class="add-cart cart17" href="#"onClick="return false">Add To Cart</a>
         </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Birthday Cake</h2>
-                    <h4>THC 24% CBD 0.4%</h4>
-                    <p>$100 1&#8260;2oz</p>
-                    <img src="./img/Birthdaycake.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Birthday Cake Kush is an indica dominant hybrid strain that is created through a cross of the insanely delicious Girl Scout Cookies X Cherry Pie strains. Like it's name suggests, this bud has a crazy tasty flavor of fruity vanilla skunk with a hint of sweet nuttiness upon exhale. The smell is a little mellower, with a sweet skunky pungency that has a slightly vanilla overtone. These buds have a super frosty appearance, much like a birthday cake, with large and dense oversized heart-shaped light forest green nugs that have sparse fiery orange hairs. Although this bud is best loved for its flavor, the effects are just as enticing. The high starts with a happy and euphoric uplifted effect that launches your mood into the sky with a complete wiping of any mental pain or racing thoughts. </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart18" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Blue Diesel</h2>
-                    <h4>THC 23% CBD 0.1%</h4>
-                    <p>$100 1&#8260;2oz</p>
-                    <img src="./img/Bluedieselcomingsoon.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Blue Diesel, also known as "Blue City Diesel" and "New Blue Diesel," is a hybrid marijuana strain made by crossing Blueberry and NYC Diesel. This strain produces a pleasant, moderate to long-lasting body buzz. Thanks to its Blueberry genetics, this flower emanates a light berry aroma that is smooth, expansive, and fast-acting. This strain is optimal for daytime and comes with little to no fatigue or increased appetite, making it a desirable option for medical marijuana patients. Blue Diesel may provide just the relaxation you need.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart19" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Jelly Belly</h2>
-                    <h4>THC 21% CBD 0.092%</h4>
-                    <p>$100 1&#8260;2oz</p>
-                    <img src="./img/jellybelly.JPG" style="width:100%;height:100%;object-fit: cover;">
-                   
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>JellyBelly (Sativa: 60% Indica: 40% )This strain has a unique flavor that is sweet, tangy, citrus and candy-like! This flavorful strain also gives off a sweet sugary aroma with some earthy and pungent touches. It sedates the mind and the body, making it a great aid for chronic stress, depression, nausea, anxiety, and chronic pain. The plant boasts olive green nugs that are fluffy with orange hairs and amber crystals. </h1>
-                    <h5>&larr;</h5>
-                  
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart20" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Blue Guava</h2>
-                    <h4>THC 21% CBD 0%</h4>
-                    <p>$100 1&#8260;2oz</p>
-                    <img src="./img/Blueguava.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Blue guava is a sativa dominant hybrid strain (80% sativa/20% indica) created as a phenotype of the delicious Gelato strain. Named for its delicious flavor and bright beachy high, Blue guava is a great choice for any sativa lover who's after a hint of energy and motivation with their bud. The high stars with a slow build of effects, sneaking into the brain with a slowly lifting sense that pulls your mood to new heights of happiness. As your mind lifts higher and higher into giddy euphoria, you'll feel a laser-sharp focus settle in alongside a growing sociability, both which lend themselves well to any conversation at hand. </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart21" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Biscotti</h2>
-                    <h4>THC 27% CBD 2%</h4>
-                    <p>$100 1&#8260;2oz</p>
-                    <img src="./img/Biscotti.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Biscotti is a rare indica dominant hybrid strain (80% indica/20% sativa) created through a delicious cross of the classic Gelato #25 X Girl Scout Cookies X South Florida OG strains. If you're looking for a classic indica with an insanely delicious flavor, you've found it. Biscotti packs everything you want and more in the effects and taste department into each delicious toke, all fueled by a super high 25% average THC level. The Biscotti high comes on with a rush of cerebral effects that launch your mind into a pure lifted state of unfocused bliss. As your mind settles, a calming body high will wash over our physical form, allowing you to kick back and relax without a care in the world. This high will quickly become giggly and stoney, leaving you laughing at anything and everything around you. </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart22" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Zpie</h2>
-                    <h4>THC 19% CBD .02%</h4>
-                    <p>$100 1&#8260;2oz</p>
-                    <img src="./img/Zpie.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Z Pie is a delectable, potent sativa-leaning hybrid that has earned its place among the top dessert strains in the cannabis world. A cross between the renowned Zkittlez and Georgia Pie, Z Pie is a sweet, fruity strain with nicely balanced effects. Its buds display vibrant green colors with streaks of deep purple and fiery orange pistils. These sparkly, dense nugs are generously coated in white trichomes, giving them a rich, frosty appearance. </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart23" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Jellybean</h2>
-                    <h4>THC 17% CBD 1%</h4>
-                    <p>$90 1&#8260;2oz</p>
-                    <img src="./img/Jellybean.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Jelly Bean, also known more commonly as “Jillybean,” is a slightly sativa dominant hybrid (60% sativa/40% indica) strain created through crossing the classic Space Queen X Orange Skunk strains. With its sweet tangy citrus candy flavor and myriad of upbeat effects, Jelly Bean is one treat you won't soon forget. The aroma of Jelly Bean is just like what the name suggests – sweet and fruity with a sugary candy effect that's accented by a touch of earthy pungency. If you like the flavor, you'll love this bud's well-balanced and long-lasting effects. The Jelly Bean high hits you softly with a gentle euphoric lift that offers a pretty hefty mood boost and a slight infusion of energy. As your head high builds, your body will slowly become more and more relaxed without being sedated or weighed down. </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart24" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Black Cherry Cake</h2>
-                    <h4>THC 23% CBD 1%</h4>
-                    <p>$90 1&#8260;2oz</p>
-                    <img src="./img/Blackcherrycake.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>The Black Cherry Cake is a wonderful, broad-spectrum stone with classic Indica characteristics that are typically felt heavily in the body. This strain is said to make them feel aroused, hungry, and focused. Black Cherry Cake is 14% THC making it an ideal choice for new and experienced cannabis consumers. </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart25" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Gumbo</h2>
-                    <h4>THC 25% CBD 1%</h4>
-                    <p>$90 1&#8260;2oz</p>
-                    <img src="./img/Gumbo.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Gumbo is an indica dominant hybrid, it was named after a bubble gum flavor, but it is not to be underestimated. The buds are covered by crystals and are light green in color. Additionally, they are incredibly frosty making it irresistible to any cannabis user. With a 65:35 indica/sativa ratio, it has an amazing 20% THC content. As for the aroma, it is incredibly sweet and smells like bubble gum. It goes without saying that it is one of the very few cannabis strains that smell exceptionally good. The taste is intense, sweet and hashy with bubble gum undertones. Moreover, it has a sugary taste to it and is no different than candy in this regard. Just like its taste, the high is intense and packs quite a punch.  </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart26" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Dosilato</h2>
-                    <h4>THC 20% CBD 1%</h4>
-                    <p>$90 1&#8260;2oz</p>
-                    <img src="./img/Dosilato.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Dosilato is an indica dominant hybrid strain (70% indica/30% sativa) created through crossing the classic Gelato #41 with the NorCal cut of the infamous Dosilato. If you're after a super relaxing high that will leave you kicking back without heavy sedation, you've found it. The Dosilato high is super calming in nature, with effects that will leave you dazed and peaceful for hours and hours on end. The high starts with a lifted effect that fills your mind with deep cerebral relaxation before spreading its warming tendrils throughout the rest of your body. You'll feel euphoric and totally at ease, without any mental or physical aches or pains to speak of. </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart27" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Cake Pop</h2>
-                    <h4>THC 26% CBD 0%</h4>
-                    <p>$90 1&#8260;2oz</p>
-                    <img src="./img/Cakepop.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Cake Pop is an indica dominant hybrid strain (80% indica/20% sativa) created through crossing the delicious Birthday Cake X Fire OG strains. If you're looking for the perfect delicious bud with a burning full-bodied high, Cake Pop is totally made for you. This bud packs a sweet and creamy vanilla cake flavor with a lightly spicy black pepper exhale. The aroma is just as delicious, with a fresh nutty vanilla cake smell that's accented by a notable punch of sharp black pepper. The Cake Pop high comes on a few minutes after your final toke, hitting the body with a light tingly sense felt in the hands and feet. This tingle will soon spread into a full-on buzz, leaving you feeling stimulated from head to toe and pretty aroused at times. When this buzz hits your brain, you'll find your mood lifted and your mind filled with an unfocused and giggly sense of pure happiness. </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart28" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Tarts</h2>
-                    <h4>THC 22% CBD 3%</h4>
-                    <p>$90 1&#8260;2oz</p>
-                    <img src="./img/Tarts.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Tarts is a sativa dominant hybrid strain (70% sativa/30% indica) created through crossing the potent SOGABX2 X Lemon Cake strains. If you're a fan of this bud's namesake breakfast pastry, you'll be head over heels for Tarts. This bud has a sweet and creamy cherry berry flavor with hints of fresh doughy nuttiness and touches of sharp lemony citrus. The aroma is just as delicious, with a nutty fruity overtone that's all wrapped up with sour citrus and fresh earth. Tarts high is just as delightful, with eye-opening effects that are best-suited for the morning or an afternoon when you need to get up and moving but need a little extra help to get there.  </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart29" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Area 41</h2>
-                    <h4>THC 27% CBD 2%</h4>
-                    <p>$90 1&#8260;2oz</p>
-                    <img src="./img/Area41.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Area 41 is a Fuel and creamy berry terpenes stain the palate with flavors of lemon and earth. The effect? Lovely, high-THC hybrid vibes from Area 41 for a workday afternoon into night, or a weekend day spent all turnt up. Reviewers report getting chatty and aroused as Area 41 cannabis zapped their pain and stress.  </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart30" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Sherbet Cake</h2>
-                    <h4>THC 18% CBD 1%</h4>
-                    <p>$90 1&#8260;2oz</p>
-                    <img src="./img/Sherbetcake.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Sherbet Cake is an indica dominant hybrid strain (85% indica/15% sativa) created through crossing the delicious Girl Scout Cookies X Pink Panties strains. Named for its amazing flavor, Sherbet Cake is the perfect indica for any patient who's after a great tropical taste with their medicine. Like its name suggest, this bud has a super sweet and sugary fruity berry flavor with a light touch of spicy tropical citrus upon exhale. The aroma is very similar, with a tropical berry overtone that's accented by spicy fruits and rich blueberries. The Sherbet Cake high is just as amazing, with full-bodied effects that will stimulate the mind while relaxing the body. You'll feel lifted and creative from the onset, with a sense of motivation and focus that helps you really jump on any artistic task. This is accompanied by a deeply relaxing physical high, which weighs down your limbs and leaves you essentially immovable from head to toe. </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart31" href="#"onClick="return false">Add To Cart</a>
-        </div>
-       
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Frosted FLakes</h2>
-                    <h4>THC 24% CBD 1%</h4>
-                    <p>$80 1&#8260;2oz</p>
-                    <img src="./img/Frostedflakescomingsoon.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Frosted Flakes is an indica-dominant hybrid marijuana strain made by crossing Miracle Alien Cookies with NH3. This strain offers a high THC level, making it suitable for experienced cannabis consumers. Frosted Flakes is ideal for later afternoon or evening use as it produces a functional, yet relaxing full-body high. You can expect the high from this strain to make you feel tingly, euphoric, and a little energetic.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart32" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Ghostface</h2>
-                    <h4>THC 19% CBD 0.4%</h4>
-                    <p>$80 1&#8260;2oz</p>
-                    <img src="./img/Ghostface.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Ghostface is a useful marijuana strain that is an Indica dominant strain containing a mixture of 70 percent Indica and 30 percent Sativa. It is produced by crossing Afghani Indica with OG Kush. It has a colorful appearance that has a leafy exterior and contains numerous colors, including tones of green, yellow and purple. It is covered with trichomes and has a dense feel. It has a moderate to high THC level. It has a pleasant and strong aroma with a hint of lemon and citrus. The taste of this marijuana strain is quite pleasant as well and is a blend of Kush, lime and sweet flavors. It produces a high and strong buzz that takes over you in an instant.   </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart33" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Gelato</h2>
-                    <h4>THC 17% CBD 0%</h4>
-                    <p>$80 1&#8260;2oz</p>
-                    <img src="./img/Gelato.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Gelato is a slightly indica dominant hybrid (55% indica/45% sativa) strain created through a cross of the infamous Sunset Sherbet X Thin Mint Girl Scout Cookies strains. This dank bud is infamous for its insanely delicious flavor and hugely powerful effects that are fueled by a THC level that hits its low point at 20% on average. Gelato has a flavor that's said to be much like a sweet sherbet, with fruity blueberry and orange flavors. The aroma is just as sickly sweet, with a lavender citrus berry bouquet that has a woody effect as the nugs are broken apart and smoked. Although it has a tasty flavor, Gelato is definitely best loved for its effects. Even with its slight indica dominance, the high is head heavy in nature and won't leave you sedated or couch-locked. It starts with a cerebral head rush that hits you in the forehead with an uplifted euphoria and a sense of slightly focused energy.  </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart34" href="#"onClick="return false">Add To Cart</a>
-        </div>
-        
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Flower</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Triangle Mintz</h2>
-                    <h4>THC 27% CBD 1.7%</h4>
-                    <p>$60 1&#8260;2oz</p>
-                    <img src="./img/Trianglemintzcomingsoon.JPG" style="width:100%;height:100%;object-fit: cover;">    
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Triangle Mints was created when Seed Junky Genetics crossed Triangle Kush with Animal Mints. Triangle Mints is 50% Indica and 50% Sativa. GSC genetics give this sativa-dominant strain dense buds and a complex aroma that includes herbal, spice, and earthy flavors with diesel undertones, and the GSC and OG Kush influences are evident in this strain. The high packs a potent punch that may leave you slumped on the couch if you consume too much.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart35" href="#"onClick="return false">Add To Cart</a>
-        </div>
-        
-      
-
-
-
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
     </div>  
   </section>
   <!--  -->
-
 <!-- Concentrates -->
   <section   id="three" >
-   
     <div class="swiper mySwiper">
       <div class="swiper-wrapper ">
-
-
         <div class="swiper-slide ">
           <label  >
             <h6>Concentrates</h6>
@@ -920,445 +132,10 @@
           </label>
           <a class="add-cart cart36" href="#"onClick="return false">Add To Cart</a>
         </div>
-
-    
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Gold Line Rosin</h2>
-                    <p>$40 g</p>             
-                    <img src="./img/Goldline.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Gold Line live Hash Rosin sets itself apart from other concentrates on the market with its exceptional quality, purity, and potency. If you are looking for an elevated cannabis experience, look no further than this outstanding product.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart37" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>710 Labs Rosin</h2>
-                    <p>$160 2g</p>             
-                    <img src="./img/710rosin.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>710 Labs Rosin sets itself apart from other concentrates on the market with its exceptional quality, purity, and potency. If you are looking for an elevated cannabis experience, look no further than this outstanding product.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart38" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Tier 1 Rosin</h2>
-                    <p>$130 2g</p>                  
-                    <img src="./img/Tier1.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Tier 1 Live Hash Rosin offers an unmatched potency that will satisfy even the most experienced cannabis enthusiasts. The concentrated form allows for higher levels of THC and other cannabinoids, providing a more intense and long-lasting effect.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart39" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Sauced Diamonds</h2>
-                    <p>$40 g</p>                  
-                    <img src="./img/Sauceddiamondscomingsoon.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Sauced Diamond</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart40" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Papaya Delight</h2>
-                    <p>$125 1&#8260;2oz</p>       
-                    <img src="./img/Papayadelight.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Papaya Delight Cannabis Wax is simply captivating. The sweet and tropical scent of papaya fills the air, creating an inviting atmosphere that instantly relaxes the mind and body. This delightful fragrance alone is enough to entice anyone to give it a try.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart41" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Peach Cobbler</h2>
-                    <p>$100 7g</p>      
-                    <img src="./img/Peachcobbler.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Imagine biting into a warm, gooey peach cobbler with hints of cinnamon and brown sugar. That's exactly what you can expect from this product. The sweet and fruity notes are perfectly balanced with the earthy undertones of cannabis, creating an unforgettable taste sensation.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart42" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Crumble</h2>
-                    <p>$100 1&#8260;2oz</p>       
-                    <img src="./img/Crumble.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Crumble is its high THC content. With levels reaching up to 90%, this concentrate provides a powerful and long-lasting effect. Whether you are seeking relief from chronic pain or simply looking to relax after a stressful day, crumble wax can deliver the desired results.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart43" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-     
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Sugar Wax</h2>
-                    <p>$100 1&#8260;2oz</p>       
-                    <img src="./img/Sugarwax.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Sugar wax has gained such popularity is its high THC content. This concentrated form of cannabis can contain up to 90% THC, making it one of the strongest products on the market. For those seeking a powerful and long-lasting high, sugar wax is the perfect choice.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart44" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Hashhole Pre-roll</h2>
-                    <p>$100 ea</p>       
-                    <img src="./img/Hashholepreroll.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Hashhole Pre-roll is a meticulously crafted joint that offers a convenient and enjoyable way to experience the benefits of high-quality cannabis. From their exquisite appearance to their exceptional flavor profile, hash rosin with premium weed prerolls are truly a connoisseur's delight. Carefully hand-rolled using only the finest flower, these joints boast an impeccable construction that showcases the craftsmanship involved in their creation.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart45" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Bonsai Disposable 1G</h2>
-                    <p>$30 ea</p>        
-                    <img src="./img/Bonsaidisposable.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Bonsai Vape is a game-changer in the world of cannabis consumption. With its discreet design and odorless vapor, it offers a convenient and enjoyable experience for users. Unlike traditional smoking methods, weed vape eliminates harmful toxins and carcinogens, making it a healthier alternative. Moreover, its precise temperature control allows for efficient extraction of cannabinoids, ensuring maximum potency. Embrace the future of cannabis consumption with a Bonsai vape and elevate your experience to new heights.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart46" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>200mg Live Rosin Gummies</h2>
-                    <p>$25/10ct</p>       
-                    <img src="./img/Gummies.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>200mg gummies represent an exciting development in cannabis consumption due to their unmatched potency, precise dosage control, convenience, and versatile effects. Whether you're an experienced user seeking a stronger dose or someone new to edibles looking for a reliable and enjoyable experience, these gummies are an excellent choice. Embrace the ultimate cannabis experience with 200mg weed gummies and unlock a world of relaxation, relief, and enjoyment.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart47" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>100mg Live Resin Gummies</h2>
-                    <p>$20 ea</p>       
-                    <img src="./img/100mgcomingsoon.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Experience the ultimate bliss with our 100mg live resin gummies! Packed with the purest and most potent cannabis extract, each bite-sized gummy delivers a burst of intense flavor and a powerful, long-lasting high. Indulge in the perfect balance of relaxation and euphoria, making every moment extraordinary. Elevate your cannabis experience with our premium live resin gummies today!</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart48" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-    
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Rso 1ml</h2>
-                    <p>$60</p>       
-                    <img src="./img/Rso1ml.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>RSO is created through a unique extraction process that preserves much of the plant material, including the trichomes that contain cannabinoids , in the final product. RSO can be smoked, applied topically, or taken orally, depending on your preference. It’s important to note though that because it is packed with THC 
-                      and other cannabinoids.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart48" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Rso 2ml</h2>
-                    <p>$120</p>       
-                    <img src="./img/Rso2ml.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>RSO is created through a unique extraction process that preserves much of the plant material, including the trichomes that contain cannabinoids , in the final product. RSO can be smoked, applied topically, or taken orally, depending on your preference. It’s important to note though that because it is packed with THC 
-                      and other cannabinoids.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart48" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Rso 5ml</h2>
-                    <p>$280</p>       
-                    <img src="./img/Rso5ml.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>RSO is created through a unique extraction process that preserves much of the plant material, including the trichomes that contain cannabinoids , in the final product. RSO can be smoked, applied topically, or taken orally, depending on your preference. It’s important to note though that because it is packed with THC 
-                      and other cannabinoids.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart48" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Rso 10ml</h2>
-                    <p>$550</p>       
-                    <img src="./img/Rso10ml.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>RSO is created through a unique extraction process that preserves much of the plant material, including the trichomes that contain cannabinoids , in the final product. RSO can be smoked, applied topically, or taken orally, depending on your preference. It’s important to note though that because it is packed with THC 
-                      and other cannabinoids.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart48" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Indigo Chocolate</h2>
-                    <p>$20 ea</p>                
-                    <img src="./img/Mushroomchocolate.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Are you looking for a unique and mind-expanding experience? Look no further than the small dose of shroom chocolate. This delectable treat combines the rich flavors of chocolate with the transformative effects of psilocybin mushrooms, creating an unforgettable journey for your taste buds and your mind.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart49" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Indigo Chocolate 2 pack</h2>
-                    <p>$40 ea</p>   
-                    <img src="./img/Mushroomchocolate2.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Indigo chocolate offers a smoother onset compared to other methods. The combination of psilocybin with the natural compounds found in cocoa helps to ease any potential discomfort or nausea that can occur during mushroom consumption. This makes it an ideal choice for those who are new to psychedelics or have sensitive stomachs.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart50" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Concentrates</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Mushroom Bar</h2>
-                    <p>$100 ea</p>   
-                    <img src="./img/Mushroomchocolatefull.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Are you tired of the same old boring chocolates? Do you crave a unique and mind-altering experience? Look no further than the Indigo Chocolate Bar! This extraordinary treat combines the rich, velvety taste of chocolate with the psychedelic effects of magic mushrooms. </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart51" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
-    </div>  
-    
+    </div>    
   </section>
 
   <!-- Deals -->
@@ -1388,172 +165,12 @@
           </label>
           <a class="add-cart cart52" href="#"onClick="return false">Add To Cart</a>
         </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Deals</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>2 Strain Premium Indoor</h2>
-                    <p>$300 2oz</p>       
-                    <img src="./img/2strainindoor.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>This is an exciting blend of various indoor-grown cannabis strains, each carefully cultivated for maximum potency and richness in aroma. The mystery bag offers a unique, unpredictable mix that will pique the interest of adventurous users. It's perfect for those seeking diverse experiences and looking to explore the vast spectrum of sensory and therapeutic effects offered by different cannabis strains. Guaranteed fresh and high-quality.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart53" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Deals</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Oreos</h2>
-                    <h4>THC 30% CBD 2%</h4>
-                    <p>$350 2oz</p>       
-                    <img src="./img/oreosdeal.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Oreos when you cross the two strains, Cookies and Cream and Secret Weapon, the result is an intense and tasty hybrid known as Ore oz. Users report experiencing a cerebral rush leading to euphoria, accompanied by a heavy body relaxation that can induce couch-lock in higher doses. In moderation, they say it offers a blissful body stone without complete incapacitation, making it ideal for evening relaxation or creative endeavors. </h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart54" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Deals</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Hash Live Rosin</h2>
-                    <p>$140 3.5g</p>       
-                    <img src="./img/Hashliverosin3.5comingsoon.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Hash Live Rosin is a revolutionary product that has taken the cannabis industry by storm. This unique form of concentrate offers a level of purity and potency that is unmatched by any other form of cannabis extract. With its high terpene content and smooth, flavorful smoke, Hash Live Rosin provides an unparalleled experience for cannabis enthusiasts.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart55" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-        <div class="swiper-slide ">
-          <label  >
-            <h6>Deals</h6>
-            <div class="flip-card">
-              <input type="checkbox"  />
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <h2>Goldline Rosin</h2>
-                    <p>$140 3.5g</p>       
-                    <img src="./img/Goldline3.5.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-                    <h3>About</h3>
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>Hash Live Rosin is a revolutionary product that has taken the cannabis industry by storm. This unique form of concentrate offers a level of purity and potency that is unmatched by any other form of cannabis extract. With its high terpene content and smooth, flavorful smoke, Hash Live Rosin provides an unparalleled experience for cannabis enthusiasts.</h1>
-                    <h5>&larr;</h5>            
-                  </div>
-                </div>
-              </div>
-          </label>
-          <a class="add-cart cart56" href="#"onClick="return false">Add To Cart</a>
-        </div>
-
-  <div class="swiper-slide ">
-    <label  >
-      <h6>Deals</h6>
-      <div class="flip-card">
-        <input type="checkbox"  />
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h2>Sauced Diamond</h2>
-              <p>$100 3.5g</p>                
-              <img src="./img/Sauceddiamond3.5comingsoon.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-              <h3>About</h3>
-            </div>
-            <div class="flip-card-back">
-              <h1>Sauced Diamonds</h1>
-              <h5>&larr;</h5>            
-            </div>
-          </div>
-        </div>
-    </label>
-    <a class="add-cart cart57" href="#"onClick="return false">Add To Cart</a>
-  </div>
-
-  <div class="swiper-slide ">
-    <label  >
-      <h6>Deals</h6>
-      <div class="flip-card">
-        <input type="checkbox"  />
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h2>Peach Cobbler</h2>
-              <p>$150 1&#8260;2oz</p>      
-              <img src="./img/Peachcobbler2.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-              <h3>About</h3>
-            </div>
-            <div class="flip-card-back">
-              <h1>Imagine biting into a warm, gooey peach cobbler with hints of cinnamon and brown sugar. That's exactly what you can expect from this product. The sweet and fruity notes are perfectly balanced with the earthy undertones of cannabis, creating an unforgettable taste sensation.</h1>
-              <h5>&larr;</h5>            
-            </div>
-          </div>
-        </div>
-    </label>
-    <a class="add-cart cart58" href="#"onClick="return false">Add To Cart</a>
-  </div>
-
-
-  <div class="swiper-slide ">
-    <label  >
-      <h6>Deals</h6>
-      <div class="flip-card">
-        <input type="checkbox"  />
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h2>Bonsai Disposables 1G</h2>
-              <p>4/$100</p>       
-              <img src="./img/Bonsaivapedeal.JPG" style="width:100%;height:100%;object-fit: cover;">                 
-              <h3>About</h3>
-            </div>
-            <div class="flip-card-back">
-              <h1>Bonsai Vape is a game-changer in the world of cannabis consumption. With its discreet design and odorless vapor, it offers a convenient and enjoyable experience for users. Unlike traditional smoking methods, weed vape eliminates harmful toxins and carcinogens, making it a healthier alternative. Moreover, its precise temperature control allows for efficient extraction of cannabinoids, ensuring maximum potency. Embrace the future of cannabis consumption with a Bonsai vape and elevate your experience to new heights.</h1>
-              <h5>&larr;</h5>            
-            </div>
-          </div>
-        </div>
-    </label>
-    <a class="add-cart cart59" href="#"onClick="return false">Add To Cart</a>
-  </div>
-
-
 </div>
 <div class="swiper-button-next"></div>
 <div class="swiper-button-prev"></div>
 </div>  
 
 </section>
-
   <!--  -->
   <section class="menu-links">
     <div class="menu-btn" id="sections">
@@ -1594,7 +211,7 @@
     </ul>
     <a href="tel:+1 737 335 5227"> (737) 335-5227</a>
     <p>&copy; 2018 Bonsai Brothers | All Rights Reserved</p>
-  </footer>
+  </footer>  
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
@@ -1616,7 +233,82 @@
       },
     });
   </script>
+ <script>
+    function calculateAge(birthDate) {
+    var today = new Date();
+    var birthDate = new Date(birthDate);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+  }
+
+  document.getElementById("birthdayForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    var birthYear = document.getElementById("birthdayYear").value;
+    var birthMonth = document.getElementById("birthdayMonth").value;
+    var birthDay = document.getElementById("birthdayDay").value;
+    var birthDate = new Date(birthYear, birthMonth - 1, birthDay); // Month is zero-based
+
+    var age = calculateAge(birthDate);
+
+    if (age < 21) {
+      document.getElementById("errorMessage").style.display = "block";
+    } else {
+      // Hide the popup
+      document.querySelector(".agepopupContainer").style.display = "none";
+
+    }
+  });
   
+ // Function to populate the month dropdown
+ function populateMonths() {
+    var select = document.getElementById("birthdayMonth");
+    var months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    for (var i = 0; i < months.length; i++) {
+      var option = document.createElement("option");
+      option.text = months[i];
+      option.value = i + 1;
+      select.appendChild(option);
+    }
+  }
+
+  // Function to populate the day dropdown
+  function populateDays() {
+    var select = document.getElementById("birthdayDay");
+    for (var i = 1; i <= 31; i++) {
+      var option = document.createElement("option");
+      option.text = i;
+      option.value = i;
+      select.appendChild(option);
+    }
+  }
+
+  // Function to populate the year dropdown
+  function populateYears() {
+    var select = document.getElementById("birthdayYear");
+    var currentYear = new Date().getFullYear();
+    for (var i = currentYear; i >= 1900; i--) {
+      var option = document.createElement("option");
+      option.text = i;
+      option.value = i;
+      select.appendChild(option);
+    }
+  }
+
+  // Call the functions to populate dropdowns when the page loads
+  window.onload = function() {
+    populateMonths();
+    populateDays();
+    populateYears();
+  };
+  </script>
  </body>
 
 </html> 

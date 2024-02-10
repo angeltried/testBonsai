@@ -1,3 +1,4 @@
+
 if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
   sessionStorage.clear();
 }
@@ -543,32 +544,19 @@ function updateQuantity(tag, amount) {
 
 onLoadCartNumbers();
 displayCart();
+
 function prepareCartEmail(name, number, address, deliveryInstructions, cartItems) {
-  let emailContent = `
-    <h2>Order Details</h2>
-    <p><strong>Name:</strong> ${name}</p>
-    <p><strong>Phone Number:</strong> ${number}</p>
-    <p><strong>Address:</strong> ${address}</p>
-    <p><strong>Delivery Instructions:</strong> ${deliveryInstructions}</p>
-    <h3>Cart Items</h3>
-    <ul>
-  `;
-
+  let emailContent = `Name:\t${name}\nNumber:\t${number}\nAddress:\t${address}\nDelivery Instructions:\t${deliveryInstructions}\nCart Items:\n`;
   let totalPrice = 0; // Initialize total price variable
-
+  
   Object.values(cartItems).forEach(item => {
     const itemTotalPrice = item.price * item.inCart;
     totalPrice += itemTotalPrice; // Add item total price to the total price variable
-    emailContent += `
-      <li>
-        <strong>${item.name}</strong> - ${item.inCart} item(s) - $${itemTotalPrice.toFixed(2)}
-      </li>
-    `;
+    emailContent += `${item.name}\t- ${item.inCart} item(s)\t- $${itemTotalPrice.toFixed(2)}\n`;
   });
   
-  emailContent += `</ul>`;
-  emailContent += `<p><strong>Total Price:</strong> $${totalPrice.toFixed(2)}</p>`; // Add total price to the email content
-
+  emailContent += `Total Price:\t$${totalPrice.toFixed(2)}\n`; // Add total price to the email content
+  
   return emailContent;
 }
 
@@ -592,7 +580,6 @@ nameInput.classList.add("required-field");
   // Append the message and the name input to the form popup container
   formPopupContainer.appendChild(callMessage);
   formPopupContainer.appendChild(nameInput);
-  
 
 const numberInput = document.createElement("input");
 numberInput.setAttribute("type", "text");
@@ -672,42 +659,18 @@ cartItemsList.style.display = "none";
   
     // Prepare the email content with the user inputs and cart items
     const emailContent = prepareCartEmail(name, number, address, deliveryInstructions, cartItems);
-  
-    // Use SMTPJS to send the email
-    Email.send({
-      SecureToken: "6932c092-95e8-4952-b76b-91c7b67b9454",
-      To: 'Ph4n7omtest@gmail.com',
-      From: "Ph4n7omtest@gmail.com",
-      Subject: "My Cart",
-      Body: emailContent,
-      isHtml: true // Set to true to send HTML content
-    })
-    .then(() => {
-      // Email sent successfully
-      alert("Order sent");
-        // Clear sessionStorage
-  sessionStorage.clear();
-   // Redirect to index.html
-    window.location.href = "index.html";
-    
-    })
-    .catch(error => {
-      // Error occurred while sending the email
-      console.error("Error sending email:", error);
-      alert("Order failed to send. Please try again later.");
-    });
-  
+   // Assuming emailContent is a string
+   let formattedEmailContent = emailContent
+   .replace(/\n/g, '%0D%0A')
+   .replace(/\t/g, '%09');
+// Open the email client with the prepared email content
+window.location.href = `mailto:bonsaibrothersadmin@proton.me?subject=My%20Cart&body=${formattedEmailContent}`;
     // Close the form popup
     closeFormPopup();
   });
 }
 
 
-window.onload = function(){
-  setTimeout(function(){
-    document.getElementById("fadein").remove();
-  },1000);
-};
 
 function showSection() {
   var i;

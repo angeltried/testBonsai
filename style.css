@@ -1,3 +1,5 @@
+
+
 @keyframes fadeinall {
   0% {
     opacity: 1; }
@@ -47,6 +49,79 @@
       flex-direction: column;
       background-color: #737576;
     }
+
+    .agepopupContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 4000;
+    }
+  
+    .agepopup {
+      background-color: white;
+      border-radius: 5px;
+      width: 375px;
+      height: 250px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .flabel{
+      display: flex;
+      position: relative;
+      bottom: 25%;
+
+    }
+  
+    /* Styling for form elements */
+    .agepopup form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .agepopup h2 {
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .agepopup select,
+    .agepopup input[type="number"] {
+      position: relative;
+      margin-top: 75px;
+      width: 25%;
+      height: 45px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box; /* Ensure padding is included in the width */
+    }
+  
+    .agepopup button[type="submit"] {
+      width: 100px;
+      padding: 2px;
+      font-size: 20px;
+      margin-top: 20px;
+      background-color: #000;
+      color: #737576;
+      border: none;
+      border-radius: 5px;
+      position: relative;
+      cursor: pointer;
+     
+    }
+
+    .agepopup button[type="submit"]:hover {
+      opacity: .5;
+    }
+
      section{
       display: flex;
       justify-content: center;
@@ -63,6 +138,7 @@
       display: flex;
       flex-direction: column;
      }
+
 
 
      .demo a {
