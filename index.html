@@ -225,6 +225,10 @@
     
       document.getElementById("noBtn").addEventListener("click", function() {
         document.getElementById("errorMessage").style.display = "block";
+        // Hide the buttons
+        document.querySelectorAll(".age-btn button").forEach(function(button) {
+          button.style.display = "none";
+        });
       });
     });
     </script>
