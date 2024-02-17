@@ -175,6 +175,8 @@
   </div>
   </section>
   <section class="mission">
+      <!-- Button -->
+<button id="addToHomeButton">Add to Home Screen</button>
     <div class="statement">
     <h1>We Do The Right Thing.</h1>
     <div class="info">
@@ -210,6 +212,27 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var addToHomeButton = document.getElementById('addToHomeButton');
+        var addToHomeLink = document.getElementById('addToHomeLink');
+    
+        addToHomeButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default behavior of the button
+    
+            if (navigator && navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    url: window.location.href
+                })
+                .then(() => console.log('Successful share'))
+                .catch((error) => console.log('Error sharing:', error));
+            } else {
+                alert("Sorry, your browser doesn't support adding to home screen.");
+            }
+        });
+      });
+</script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
