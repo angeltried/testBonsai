@@ -175,8 +175,8 @@
   </div>
   </section>
   <section class="mission">
-      <!-- Button -->
-<button id="addToHomeButton">Add to Home Screen</button>
+    <button onclick="bookmarkPage()">Bookmark This Page</button>
+
     <div class="statement">
     <h1>We Do The Right Thing.</h1>
     <div class="info">
@@ -213,27 +213,25 @@
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var addToHomeButton = document.getElementById('addToHomeButton');
-        var addToHomeLink = document.getElementById('addToHomeLink');
+    function bookmarkPage() {
+        var url = window.location.href;
+        var title = document.title;
     
-        addToHomeButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default behavior of the button
-    
-            if (navigator && navigator.share) {
-                navigator.share({
-                  title: 'Title of the shared content',
-    text: 'Description of the shared content',
-    url: 'ph4n7omtest.com'
-                })
-                .then(() => console.log('Successful share'))
-                .catch((error) => console.log('Error sharing:', error));
-            } else {
-                alert("Sorry, your browser doesn't support adding to home screen.");
-            }
-        });
-      });
-</script>
+        if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
+            window.sidebar.addPanel(title, url, '');
+        } else if (window.external && ('AddFavorite' in window.external)) { // IE Favorite
+            window.external.AddFavorite(url, title);
+        } else if (window.opera && window.print) { // Opera Hotlist
+            var elem = document.createElement('a');
+            elem.setAttribute('href', url);
+            elem.setAttribute('title', title);
+            elem.setAttribute('rel', 'sidebar');
+            elem.click();
+        } else { // Other browsers
+            alert("Press Ctrl+D to bookmark this page.");
+        }
+    }
+    </script>
 
 
    <!-- Initialize Swiper -->
