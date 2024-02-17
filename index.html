@@ -211,6 +211,19 @@
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="add-to-home-screen.js"></script>
   <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          })
+          .catch(function(err) {
+            console.error('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
+  </script>
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
       // Function to show the age verification popup
       function showAgeVerificationPopup() {
