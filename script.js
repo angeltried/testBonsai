@@ -670,6 +670,29 @@ window.location.href = `mailto:bonsaibrothersadmin@proton.me?subject=My%20Cart&b
   });
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Function to show the age verification popup
+  function showAgeVerificationPopup() {
+    document.getElementById("popupContainer").style.display = "flex";
+  }
+
+  // Call the function to show the popup when the page loads
+  showAgeVerificationPopup();
+
+  // Add event listeners to the buttons
+  document.getElementById("yesBtn").addEventListener("click", function() {
+    document.getElementById("popupContainer").style.display = "none";
+  });
+
+  document.getElementById("noBtn").addEventListener("click", function() {
+    document.getElementById("errorMessage").style.display = "block";
+    // Hide the buttons
+    document.querySelectorAll(".age-btn button").forEach(function(button) {
+      button.style.display = "none";
+    });
+  });
+});
+
 
 
 function showSection() {

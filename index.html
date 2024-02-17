@@ -222,8 +222,9 @@
     
             if (navigator && navigator.share) {
                 navigator.share({
-                    title: document.title,
-                    url: window.location.href
+                  title: 'Title of the shared content',
+    text: 'Description of the shared content',
+    url: 'ph4n7omtest.com'
                 })
                 .then(() => console.log('Successful share'))
                 .catch((error) => console.log('Error sharing:', error));
@@ -234,30 +235,7 @@
       });
 </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Function to show the age verification popup
-      function showAgeVerificationPopup() {
-        document.getElementById("popupContainer").style.display = "flex";
-      }
-    
-      // Call the function to show the popup when the page loads
-      showAgeVerificationPopup();
-    
-      // Add event listeners to the buttons
-      document.getElementById("yesBtn").addEventListener("click", function() {
-        document.getElementById("popupContainer").style.display = "none";
-      });
-    
-      document.getElementById("noBtn").addEventListener("click", function() {
-        document.getElementById("errorMessage").style.display = "block";
-        // Hide the buttons
-        document.querySelectorAll(".age-btn button").forEach(function(button) {
-          button.style.display = "none";
-        });
-      });
-    });
-    </script>
+
    <!-- Initialize Swiper -->
    <script>
     var swiper = new Swiper(".mySwiper", {
