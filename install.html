@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+     <!-- Enable standalone mode for iOS -->
+     <meta name="apple-mobile-web-app-capable" content="yes">
+     <!-- Set the status bar style (optional) -->
+     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <!-- Set the icon for the web app -->
+     <link rel="apple-touch-icon" href="/icon.png">
 </head>
 <body>
-    <button id="addToHomeScreen">Add to Home Screen</button>
-
-<script src="add-to-home-screen.js"></script>
-<script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(function(registration) {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          })
-          .catch(function(err) {
-            console.error('ServiceWorker registration failed: ', err);
-          });
-      });
-    }
-  </script>
+    <h1>Welcome to My Web App</h1>
+    <!-- Button to prompt user to add to home screen -->
+    <button onclick="addToHomeScreen()">Add to Home Screen</button>
+    <!-- Other content of your web app -->
+    
+    <script>
+        function addToHomeScreen() {
+            // Check if the browser supports the installation prompt
+            if (window.navigator.standalone === false) {
+                alert("To add this app to your home screen, tap the Share button and then select 'Add to Home Screen'.");
+            } else {
+                alert("This app is already added to your home screen.");
+            }
+        }
+    </script>
 </body>
 </html>
